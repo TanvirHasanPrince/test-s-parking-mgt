@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { parseISO, differenceInHours, format, isValid } from "date-fns";
 import { capitalizeWords } from "../utils/helperFunction";
