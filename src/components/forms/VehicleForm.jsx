@@ -6,6 +6,7 @@ const VehicleForm = ({ selectedVehicle, onUpdate }) => {
     licenseNumber: "",
     vehicleType: "",
     ownerName: "",
+    ownerPhone: "",
     status: "in",
     ownerAddress: "",
     entryTime: "",
@@ -51,6 +52,8 @@ const VehicleForm = ({ selectedVehicle, onUpdate }) => {
     if (!formData.ownerName) errors.ownerName = "Owner Name is required";
     if (!formData.ownerAddress)
       errors.ownerAddress = "Owner Address is required";
+    if (!formData.ownerPhone)
+      errors.ownerPhone = "Owner Phone number is required";
     if (!formData.entryTime) errors.entryTime = "Entry Time is required";
     if (!formData.exitTime) errors.exitTime = "Exit Time is required";
     setErrors(errors);
@@ -81,6 +84,7 @@ const VehicleForm = ({ selectedVehicle, onUpdate }) => {
       licenseNumber: "",
       vehicleType: "",
       ownerName: "",
+      ownerPhone: "",
       status: "in",
       ownerAddress: "",
       entryTime: "",
@@ -149,6 +153,23 @@ const VehicleForm = ({ selectedVehicle, onUpdate }) => {
         />
         {errors.ownerName && (
           <p className="text-red-500 text-xs italic">{errors.ownerName}</p>
+        )}
+      </div>
+      <div className="col-span-1 mb-4">
+        <label className="block text-gray-700 text-sm font-bold mb-2">
+           Phone number:
+        </label>
+        <input
+          type="text"
+          name="ownerPhone"
+          value={formData.ownerPhone}
+          onChange={handleInputChange}
+          className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+            errors.ownerPhone ? "border-red-500" : ""
+          }`}
+        />
+        {errors.ownerPhone && (
+          <p className="text-red-500 text-xs italic">{errors.ownerPhone}</p>
         )}
       </div>
 
