@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { parseISO, differenceInHours, format, isValid } from "date-fns";
 import { capitalizeWords } from "../utils/helperFunction";
@@ -100,8 +101,9 @@ const Dashboard = () => {
         <ul>
           {stats.longParkedVehicles.map((vehicle, index) => (
             <li key={index}>
-              {vehicle.licenseNumber} - {vehicle.ownerName} -{" "}
-              {vehicle.vehicleType}
+              <strong>License Number:</strong> {vehicle.licenseNumber} -{" "}
+              <strong>Owner Name:</strong> {vehicle.ownerName} -{" "}
+              <strong>Vehicle Type:</strong> {vehicle.vehicleType}
             </li>
           ))}
         </ul>
