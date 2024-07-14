@@ -92,7 +92,7 @@ const VehicleForm = ({ selectedVehicle, onUpdate }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md grid grid-cols-2 gap-4"
+      className="max-w-md mx-auto p-6 grid grid-cols-2 gap-4"
     >
       <div className="col-span-1 mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2">

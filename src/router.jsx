@@ -3,7 +3,7 @@ import App from "./App";
 import VehicleInformation from "./pages/VehicleInformation";
 import VehicleForm from "./components/forms/VehicleForm";
 import Dashboard from "./pages/Dashboard";
-
+import HeroSection from "./components/pageComponent/HeroSection";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "/",
+        element: <HeroSection />,
       },
     ],
   },

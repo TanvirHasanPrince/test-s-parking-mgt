@@ -7,7 +7,7 @@ const Navbar = () => {
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Rj5nyCUp5HJezkq4Ih0FhEkPnXygBYQKYQ&s"
           alt="Logo"
-          className="h-8 w-8 mr-2"
+          className="h-8 w-8 mr-2 rounded-full"
         />
         <Link to="/" className="font-semibold text-xl">
           Parking Management System

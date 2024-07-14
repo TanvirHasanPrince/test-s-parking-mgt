@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { parseISO, differenceInHours, format, isValid } from "date-fns";
+import { capitalizeWords } from "../utils/helperFunction";
 
 const Dashboard = () => {
   const [vehicles, setVehicles] = useState([]);
@@ -40,10 +41,13 @@ const Dashboard = () => {
       return acc;
     }, {});
 
-    const longParkedVehicles = filteredVehicles.filter(
-      (vehicle) =>
-        differenceInHours(new Date(), parseISO(vehicle.entryTime)) > 2
-    );
+    const longParkedVehicles = filteredVehicles.filter((vehicle) => {
+      const entryTime = parseISO(vehicle.entryTime);
+      const exitTime = vehicle.exitTime
+        ? parseISO(vehicle.exitTime)
+        : new Date();
+      return differenceInHours(exitTime, entryTime) > 2;
+    });
 
     setStats({
       totalParked,
@@ -84,7 +88,7 @@ const Dashboard = () => {
         <ul>
           {Object.entries(stats.vehicleTypeInfo).map(([type, count]) => (
             <li key={type}>
-              {type}: {count}
+              {capitalizeWords(type)}: {count}
             </li>
           ))}
         </ul>
